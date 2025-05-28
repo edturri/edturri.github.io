@@ -7,6 +7,7 @@ body {
     margin: 40px auto;
     padding: 0 20px;
     line-height: 1.6;
+    text-align: justify;
   }
   
   /* Main heading (your name) */
@@ -19,8 +20,8 @@ body {
   /* Section titles */
   h2 {
     font-size: 1.5em;
-    color: #333366;
-    border-bottom: 1px solid #ccc;
+    color: #1a1a1a;
+    /*border-bottom: 1px solid #ccc;*/
     padding-bottom: 5px;
     margin-top: 40px;
   }
@@ -28,12 +29,12 @@ body {
   /* Links */
   a {
     color: #0055cc;
-    text-decoration: none;
-  }
-  
-  a:hover {
     text-decoration: underline;
   }
+  
+  /*a:hover {
+    text-decoration: underline;
+  }*/
   
   /* Unordered list (papers) */
   ul {
