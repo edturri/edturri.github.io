@@ -43,4 +43,25 @@ body {
     list-style-type: square;
     padding-left: 20px;
   }
+
+
+/* Map layout */
+.map-container {
+  max-width: 100%;
+  margin-bottom: 40px;
+}
+svg {
+  width: 100%;
+  height: auto;
+}
+
+.map-caption {
+  text-align: center;
+  font-size: 8px;   /* or try 1.1em, 14pt, etc. */
+  /*font-style: italic;*/
+  color: #555;
+  margin-top: 10px;
+}
+
+  
   
