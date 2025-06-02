@@ -52,8 +52,12 @@ body {
 }
 svg {
   width: 100%;
+  max-width: 700px;   /* or 600px, adjust as needed */
   height: auto;
+  display: block;
+  margin: 0 auto;     /* center it */
 }
+
 
 .map-caption {
   text-align: center;
