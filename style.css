@@ -58,6 +58,11 @@ svg {
   margin: 0 auto;     /* center it */
 }
 
+.rotated-map {
+  transform: rotate(180deg);
+  transform-origin: center;
+}
+
 
 .map-caption {
   text-align: center;
