@@ -1,9 +1,9 @@
 /* Style the entire page */
 body {
-    font-family: Georgia, serif;
+    font-family: 'Montserrat', sans-serif;
     background-color: #f9f9f9;
     color: #333;
-    max-width: 800px;
+    max-width: 1150px;
     margin: 40px auto;
     padding: 0 20px;
     line-height: 1.6;
@@ -11,26 +11,42 @@ body {
   }
   
   /* Main heading (your name) */
-  h1 {
-    font-size: 2.5em;
-    color: #1a1a1a;
-    margin-bottom: 10px;
-  }
+h1 {
+    font-size: 2em;
+    color: #236e93;
+    margin-bottom: 80px;
+    margin-top: 120px;  /* move the name down */
+    font-weight: normal;   /* or 400 */
+}
+
   
   /* Section titles */
-  h2 {
+h2 {
     font-size: 1.5em;
-    color: #1a1a1a;
-    /*border-bottom: 1px solid #ccc;*/
-    padding-bottom: 5px;
-    margin-top: 40px;
-  }
-  
-  
+    color: #236e93;
+    font-weight: normal;   /* or 400 */
+}
+
+paper {
+    display: block;
+    margin-bottom: 10px; 
+    font-size: 1em;
+    font-weight: normal;   /* or 400 */
+}
+
+abstract {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    line-height: 1.6;
+    font-size: 0.9em;
+}
+
+
 
   /* Links */
   a {
-    color: #0055cc;
+    color: #236e93;
     text-decoration: underline;
   }
   
@@ -44,33 +60,26 @@ body {
     padding-left: 20px;
   }
 
-
-/* Map layout */
-.map-container {
-  max-width: 100%;
-  margin-bottom: 40px;
-}
-svg {
-  width: 100%;
-  max-width: 700px;   /* or 600px, adjust as needed */
-  height: auto;
-  display: block;
-  margin: 0 auto;     /* center it */
+  /* Container for photo + text */
+.intro-block {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;             /* space between photo and text */
+    margin: 40px 0;
 }
 
-.rotated-map {
-  transform: rotate(180deg);
-  transform-origin: center;
+/* Photo styling */
+.profile-photo {
+    width: 500px;          /* adjust size here */
+    height: auto;
+    border-radius: 4px;    /* slight rounding; remove if not wanted */
 }
 
-
-.map-caption {
-  text-align: center;
-  font-size: 8px;   /* or try 1.1em, 14pt, etc. */
-  /*font-style: italic;*/
-  color: #555;
-  margin-top: 10px;
+/* Text on the right */
+.intro-text {
+    flex: 1;               /* text takes remaining horizontal space */
+    font-size: 1.1em;
+    line-height: 1.6;
+    text-align: justify;   /* consistent with your site style */
 }
 
-  
-  
