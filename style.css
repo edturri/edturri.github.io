@@ -75,6 +75,7 @@ img {
 /* Photo styling */
 .profile-photo {
     width: 500px;          /* adjust size here */
+    max-width: 100%;    /* never larger than its container */
     height: auto;
     border-radius: 4px;    /* slight rounding; remove if not wanted */
 }
@@ -87,20 +88,20 @@ img {
     text-align: justify;   /* consistent with your site style */
 }
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
 
-  /* Stack photo and text vertically on small screens */
   .intro-block {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
-  }
-
-  .profile-photo {
-    width: 140px;      /* slightly smaller on mobile */
+    flex-direction: column;   /* stack image and text */
+    align-items: flex-start;  /* align to left/top */
   }
 
   .intro-text {
-    text-align: left;  /* easier to read on mobile */
+    width: 100%;              /* take full width below image */
+    text-align: left;         /* easier on mobile */
+  }
+
+  .profile-photo {
+    width: 150px;             /* optionally slightly smaller on mobile */
   }
 }
+
