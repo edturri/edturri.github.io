@@ -42,6 +42,10 @@ abstract {
     font-size: 0.9em;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+}
 
 
   /* Links */
@@ -83,3 +87,20 @@ abstract {
     text-align: justify;   /* consistent with your site style */
 }
 
+@media (max-width: 600px) {
+
+  /* Stack photo and text vertically on small screens */
+  .intro-block {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .profile-photo {
+    width: 140px;      /* slightly smaller on mobile */
+  }
+
+  .intro-text {
+    text-align: left;  /* easier to read on mobile */
+  }
+}
