@@ -101,7 +101,9 @@ img {
   }
 
   .profile-photo {
-    width: 150px;             /* optionally slightly smaller on mobile */
+    width: 100%;        /* take full width of the text column */
+    max-width: 100%;    /* no extra limit */
+    height: auto;
   }
 }
 
