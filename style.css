@@ -31,6 +31,17 @@ p {
     text-align: left;
 }
 
+  /* Subsection titles */
+h3 {
+    font-size: 1em;
+    color: #A47B67;
+    font-weight: normal;   /* or 400 */
+}
+
+p {
+    text-align: left;
+}
+
 
 paper {
     display: block;
@@ -121,4 +132,29 @@ img {
     paper {
         text-align: left;
     }
+}
+
+
+/* Remove default marker */
+.abstract-collapse summary {
+  list-style: none;
+  cursor: pointer;
+}
+
+.abstract-collapse summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Create custom triangle */
+.abstract-collapse summary::before {
+  content: "+";
+  color: #A47B67;        /* your chosen color */
+  display: inline-block;
+  margin-right: 6px;
+  transition: transform 0.2s ease;
+}
+
+/* Rotate when open */
+.abstract-collapse[open] summary::before {
+  transform: rotate(90deg);
 }
