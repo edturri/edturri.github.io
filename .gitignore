@@ -3,3 +3,9 @@
 
 # Claude Code local config
 .claude/
+
+# Local-only source/originals — kept on disk, not published
+*.webarchive
+images/enricodturri.jpg
+images/Solvay_conference_1927.jpg
+data/Prize_Winners_Dataset/Prize_Winners_Dataset_2026_07_23.xlsx
