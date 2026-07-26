@@ -6,112 +6,336 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="map-style.css">
 </head>
 
-
-
-
-
-
 <body>
-  <h1>Enrico D. Turri</h1>
-  
+  <div class="wrapper">
 
-  <div class="intro-block">
-  <img src="images/enricodturri.jpg" alt="Enrico D. Turri" class="profile-photo">
+    <!-- Left sidebar: stays in place while the content scrolls -->
+    <header class="sidebar">
+      <h1>Enrico D. Turri</h1>
+      <!-- Landscape crop on phones (shorter header), portrait on wider screens -->
+      <picture>
+        <source media="(max-width: 899px)" srcset="images/enricodturri_horizontal.jpg">
+        <img src="images/enricodturri_vertical.jpg" alt="Enrico D. Turri" class="profile-photo">
+      </picture>
+      <p class="tagline">PhD Candidate in Economics<br>London School of Economics</p>
+      <p class="quick-links">
+        <a href="https://www.lse.ac.uk/people/enrico-d.-turri" target="_blank">LSE</a> |
+        <a href="https://uk.linkedin.com/in/enrico-d-turri" target="_blank">LinkedIn</a> |
+        <a href="mailto:e.turri@lse.ac.uk">Email</a>
+      </p>
+    </header>
 
-  <div class="intro-text">
-    <p>I am a PhD Candidate in Economics at the London School of Economics.</p>
-    <p>My research interests are in Macroeconomics.</p>
-    <p>Here you can find my <a href="pdfs/cv.pdf" target="_blank">CV</a> and my <a href="https://www.lse.ac.uk/people/enrico-d.-turri" target="_blank"> LSE webpage</a>.</p>
-    <p>You can contact me at <a href="mailto:e.turri@lse.ac.uk">e.turri@lse.ac.uk</a>.</p>
+    <!-- Right column: scrolling content -->
+    <main class="content">
+
+      <p>Welcome! I am a PhD Candidate in Economics at the London School of Economics.
+         My research interests are in Macroeconomics.</p>
+      <p>In the fall of 2025 I visited the MIT Department of Economics.<br>
+         Before starting my PhD, I graduated with an MSc in Mathematics from the University of Turin
+         and an MA in Economics from Collegio Carlo Alberto.</p>
+      <p><strong>I will be on the 2026/27 academic job market.</strong></p>
+
+      <!-- Tab bar: the sections sit side by side, with the CV as a plain link -->
+      <div class="tabs">
+        <div class="tab-group" role="tablist" aria-label="Sections">
+          <button role="tab" data-tab="research" aria-selected="true"  aria-controls="panel-research">Research</button>
+          <button role="tab" data-tab="teaching" aria-selected="false" aria-controls="panel-teaching">Teaching</button>
+          <button role="tab" data-tab="data"     aria-selected="false" aria-controls="panel-data">Data</button>
+        </div>
+        <a class="tab-link" href="pdfs/cv.pdf" target="_blank">CV</a>
+      </div>
+
+      <!-- ============================ RESEARCH ============================ -->
+      <div class="panel" id="panel-research" role="tabpanel" data-panel="research" aria-labelledby="tab-research">
+
+        <h3>Job Market Paper</h3>
+
+        <div class="paper">
+          <p class="paper-title">Ageing, New Products and the Growth Slowdown</p>
+          <p class="venue">Draft coming soon</p>
+        </div>
+
+        <h3>Publications</h3>
+
+        <div class="paper">
+          <p class="paper-title">
+            <a href="pdfs/2026_04_15_Drechsel_et_al.pdf" target="_blank">Optimal monetary and exchange rate frameworks for commodity-exposed economies</a>
+          </p>
+          <p class="coauthors">with Thomas Drechsel, Michael McLeay and Silvana Tenreyro</p>
+          <p class="venue">Accepted at <i>Journal of International Economics</i><br>
+             NBER WP 35164, CEPR DP21518, BoE Staff WP No. 1,186</p>
+          <p class="paper-links">
+            <a href="https://data.mendeley.com/datasets/jxss8hsnfw/1" target="_blank">Replication package</a>
+          </p>
+          <details class="abstract-collapse">
+            <summary>Abstract</summary>
+            <p class="abstract">This paper shows that the optimal monetary policy and exchange rate framework
+              depend critically on the economy’s commodity exposure. We develop a flexible but
+              tractable model economy with commodity exports and imports, in which international
+              financial conditions may vary with the commodity cycle. Stabilizing domestic prices is
+              optimal for commodity exporters, in line with standard open-economy policy prescriptions.
+              But for economies that use commodities as inputs in production, optimal policy largely
+              ‘looks through’ the direct and indirect effects of commodity shocks on domestic prices;
+              this contrasts with some earlier findings and policy practice (which only ‘looks through’
+              the direct effect). Exchange-rate pegs or strict CPI inflation targeting perform better for
+              commodity importers because they stabilize wages and employment, though neither policy
+              is robustly optimal. In emerging and developing economies, where financial conditions
+              are more tied to the commodity cycle, trade-offs are starker and implementing the optimal
+              policy may be challenging, since it requires enough credibility to keep inflation expectations
+              anchored amidst greater volatility in some nominal variables.</p>
+          </details>
+        </div>
+
+        <h3>Working Papers</h3>
+
+        <!-- Temporarily hidden: Human, All Too Human Growth
+        <div class="paper">
+          <p class="paper-title">
+            <a href="pdfs/2026_05_30_Turri.pdf" target="_blank">Human, All Too Human Growth</a>
+          </p>
+          <details class="abstract-collapse">
+            <summary>Abstract</summary>
+            <p class="abstract">How do habits and interpersonal comparisons interact with economic growth? Under the
+              standard macroeconomic formulation, a Cobb-Douglas aggregator of absolute and relative
+              consumption nested in CRRA utility, a folk theorem holds: in canonical growth models, naive
+              and sophisticated solutions deliver identical growth rates, observationally equivalent to a
+              non-behavioural model with reparametrised utility curvature. This formulation, however, fails
+              to capture that when absolute consumption increases, habits and comparisons become more
+              salient. A minimal CES generalisation with complementarity is able to capture this intuition
+              and breaks the folk theorem, implying inefficiently high growth, overwork, and rising
+              inequality aversion along development.</p>
+          </details>
+        </div>
+        -->
+
+        <div class="paper">
+          <p class="paper-title">
+            <a href="pdfs/2026_06_11_Garibaldi_Turri.pdf" target="_blank">Monopsony in Growth Theory</a>
+          </p>
+          <p class="coauthors">with Pietro Garibaldi</p>
+          <p class="venue">CEPR DP19652</p>
+          <details class="abstract-collapse">
+            <summary>Abstract</summary>
+            <p class="abstract">The secular decline in the labor share and the long-run reduction in labor supply suggest that
+              imperfect labor markets can play a role in long-run economic growth. Unlike rising markups,
+              rising wage markdowns are compatible with a balanced growth path featuring declining labor
+              share and constant capital-output ratio. We introduce oligopsony and oligopoly power in a
+              neoclassical growth model with superstar firms and an inferior sector which represents workers’
+              outside option. Faster TFP growth in the superstar sector with respect to the inferior sector
+              generates an endogenously increasing markdown, the driver of growth misallocation. The model
+              can be calibrated to simultaneously match the joint trends of GDP growth, declining labor share,
+              and hours worked. For the US, the consumption-equivalent loss with respect to the optimal
+              growth path is around 7.5 percent. An extension of the model with hand-to-mouth workers
+              and capitalists delivers balanced growth with increasing inequality. While—in this context—
+              proportional taxation distorts equilibrium labor supply, a rising minimum wage can restore
+              efficient growth.</p>
+          </details>
+        </div>
+
+        <h3>Work in Progress</h3>
+
+        <div class="paper brief">
+          <p class="paper-title">Structural Change and the Size of Government</p>
+        </div>
+
+        <div class="paper brief">
+          <p class="paper-title">Inequality and AI Existential Risk</p>
+        </div>
+
+        <div class="paper brief">
+          <p class="paper-title">Monopsonistic Search</p>
+          <p class="coauthors">with Pietro Garibaldi and Espen R. Moen</p>
+        </div>
+
+        <div class="paper brief">
+          <p class="paper-title">Housing Inequality</p>
+          <p class="coauthors">with Ethan Ilzetzki</p>
+        </div>
+
+        <div class="paper brief">
+          <p class="paper-title">Lags</p>
+          <p class="coauthors">with Michael McLeay, Silvana Tenreyro and Iván Werning</p>
+        </div>
+
+        <h3>Research Notes</h3>
+
+        <div class="paper">
+          <p class="paper-title">
+            <a href="pdfs/2026_07_26_Turri.pdf" target="_blank">Log Linearisation is a Change of Coordinates of Taylor Expansion</a>
+          </p>
+          <details class="abstract-collapse">
+            <summary>Abstract</summary>
+            <p class="abstract">For a long time, I struggled with log linearisation, which macroeconomists commonly
+              use to approximate model equations. As a mathematician by training, I was never introduced to it
+              before starting my PhD. Instead, I was taught to approximate functions and equations using Taylor
+              expansions, and I instinctively tried to reconcile the two. To make my confusion worse, each
+              macroeconomist seems to follow a different procedure to log linearise, and then, when I started
+              working on a paper involving second-order approximations, the algebra of some of these methods
+              became convoluted and I couldn’t find a clarifying reference. So I decided to add to the
+              long-standing tradition of macroeconomists that describe their favourite recipe to log linearise
+              models. In this pedantic note, I show how I log approximate (“linearise” is correct only for
+              first-order approximations) equations by (1) taking a Taylor expansion and (2) choosing a deviation
+              metric, which amounts to choosing coordinates, providing a unifying framework that can nest
+              different approximation strategies. In doing this, I show that the difference between what
+              economists and mathematicians (and natural scientists and engineers) do is purely representational.
+              My approach separates the order of approximation from the choice of deviation metric, and I derive
+              explicit second-order mappings between log and (what I term) “per-unit” deviations and show that,
+              when handled consistently, they yield equivalent local approximations. This analysis also clarifies
+              that the choice of deviation metric should be made based on the equations that one is approximating.
+              Log approximation is natural for the multiplicative equations that dominate macroeconomic modelling,
+              since they are first-order exact in logs. Instead, for example, additive identities remain exact in
+              per-unit form.</p>
+          </details>
+        </div>
+
+      </div>
+
+      <!-- ============================ TEACHING ============================ -->
+      <div class="panel" id="panel-teaching" role="tabpanel" data-panel="teaching" aria-labelledby="tab-teaching" hidden>
+
+        <h3>Current Teaching</h3>
+
+        <p class="institution">London School of Economics</p>
+
+        <div class="course">
+          <p class="course-title">EC442: Macroeconomics for MRes students</p>
+          <p class="course-meta">Department of Economics · First-year PhD · Teaching Fellow · 2026/27</p>
+        </div>
+
+        <h3>Past Teaching</h3>
+
+        <p class="institution">London School of Economics</p>
+
+        <div class="course">
+          <p class="course-title">PP441: Geoeconomics</p>
+          <p class="course-meta">School of Public Policy · Graduate · Teaching Fellow · 2025/26</p>
+        </div>
+
+        <div class="course">
+          <p class="course-title">PP440E: Economic Policy Analysis</p>
+          <p class="course-meta">School of Public Policy · Graduate · Teaching Fellow · 2025/26</p>
+        </div>
+
+        <div class="course">
+          <p class="course-title">EC339: International Macroeconomics</p>
+          <p class="course-meta">Department of Economics · Undergraduate · Teaching Assistant · 2023/24, 2025/26</p>
+        </div>
+
+        <div class="course">
+          <p class="course-title">EC2A3: Microeconomics II</p>
+          <p class="course-meta">Department of Economics · Undergraduate · Teaching Assistant · 2021/22, 2023/24</p>
+        </div>
+
+        <div class="course">
+          <p class="course-title">EC1B5: Macroeconomics I</p>
+          <p class="course-meta">Department of Economics · Undergraduate · Teaching Assistant · 2022/23</p>
+        </div>
+
+        <div class="course">
+          <p class="course-title">EC400: Introductory Course in Mathematics and Statistics</p>
+          <p class="course-meta">Department of Economics · Graduate · Teaching Assistant · 2022/23</p>
+        </div>
+
+        <p class="institution">University of Turin</p>
+
+        <div class="course">
+          <p class="course-title">Growth and Development</p>
+          <p class="course-meta">Department of Economics · Graduate · Guest Lecturer · 2024/25</p>
+        </div>
+
+        <div class="course">
+          <p class="course-title">Mathematical Analysis 2</p>
+          <p class="course-meta">Department of Mathematics · Undergraduate · Teaching Assistant · 2018/19</p>
+        </div>
+
+        <p class="teaching-note">I am an Associate Fellow of Advance HE. I received the LSE Class Teaching Award
+           for excellence in teaching in 2023, and the Department of Economics teaching bonus award in 2023, 2025 and 2026.</p>
+
+      </div>
+
+      <!-- ============================== DATA ============================== -->
+      <div class="panel" id="panel-data" role="tabpanel" data-panel="data" aria-labelledby="tab-data" hidden>
+
+        <figure class="data-figure">
+          <img src="images/Solvay_conference_1927_web.jpg" alt="The Fifth Solvay Conference, 1927">
+          <figcaption>The Fifth Solvay Conference (1927). Of the 29 attendees, 17 were or became
+            Nobel laureates.</figcaption>
+        </figure>
+
+        <div class="paper">
+          <p class="paper-title">
+            <a href="data/Prize_Winners_Dataset/Prize_Winners_Dataset_2026_07_24.xlsx">Prize Winners Dataset, 1901–2026</a>
+          </p>
+          <p class="venue">Extends the Nobel Prize data of Jones and Weinberg (2011) to 2025, and adds the
+             Fields Medal, the John Bates Clark Medal, the Turing Award, the Abel Prize and the
+             Wolf Prize in Mathematics</p>
+          <p class="paper-links">
+            <a href="data/Prize_Winners_Dataset/Prize_Winners_Dataset.pdf" target="_blank">Accompanying note</a>
+          </p>
+        </div>
+
+        <!-- Template for a dataset entry — copy, uncomment and fill in:
+        <div class="paper">
+          <p class="paper-title">
+            <a href="https://example.com/dataset" target="_blank">Name of the dataset</a>
+          </p>
+          <p class="venue">Where it is hosted, year · DOI</p>
+          <details class="abstract-collapse">
+            <summary>Description</summary>
+            <p class="abstract">What the data covers, its sources, coverage and units.</p>
+          </details>
+        </div>
+        -->
+
+      </div>
+
+    </main>
   </div>
-</div>
 
+  <script>
+    (function () {
+      const tabs = Array.from(document.querySelectorAll('[role="tab"]'));
+      const panels = Array.from(document.querySelectorAll('[role="tabpanel"]'));
+      const names = tabs.map(t => t.dataset.tab);
 
-  <h2>Research</h2>
-  <h3>Publications</h3>
-  <paper><a href="pdfs/2026_04_15_Drechsel_et_al.pdf" target="_blank">How should central banks respond to commodity price shocks? Optimal monetary and exchange rate frameworks for commodity-exposed economies</a>, 
-        with Thomas Drechsel, Michael McLeay and Silvana Tenreyro
-      </paper>
-      <p>Accepted at <i>Journal of International Economics</i></p>
-      <p>NBER WP 35164, CEPR DP21518, BoE Staff WP No. 1,186</p>
-      <abstract>This paper shows that the optimal monetary policy and exchange rate framework
-        depend critically on the economy’s commodity exposure. We develop a flexible but
-        tractable model economy with commodity exports and imports, in which international
-        financial conditions may vary with the commodity cycle. Stabilizing domestic prices is
-        optimal for commodity exporters, in line with standard open-economy policy prescriptions.
-        But for economies that use commodities as inputs in production, optimal policy largely
-        ‘looks through’ the direct and indirect effects of commodity shocks on domestic prices;
-        this contrasts with some earlier findings and policy practice (which only ‘looks through’
-        the direct effect). Exchange-rate pegs or strict CPI inflation targeting perform better for
-        commodity importers because they stabilize wages and employment, though neither policy
-        is robustly optimal. In emerging and developing economies, where financial conditions
-        are more tied to the commodity cycle, trade-offs are starker and implementing the optimal
-        policy may be challenging, since it requires enough credibility to keep inflation expectations
-        anchored amidst greater volatility in some nominal variables.
-      </abstract>
+      function show(name) {
+        tabs.forEach(t => {
+          const on = t.dataset.tab === name;
+          t.setAttribute('aria-selected', on);
+          t.tabIndex = on ? 0 : -1;
+        });
+        panels.forEach(p => { p.hidden = p.dataset.panel !== name; });
+      }
 
-  <h3>Working Papers</h3>
-      <!-- Temporarily hidden: Human, All Too Human Growth
-      <paper><a href="pdfs/2026_05_30_Turri.pdf" target="_blank">Human, All Too Human Growth</a></paper>
-      <abstract>How do habits and interpersonal comparisons interact with economic growth? Under the
-        standard macroeconomic formulation, a Cobb-Douglas aggregator of absolute and relative
-        consumption nested in CRRA utility, a folk theorem holds: in canonical growth models, naive
-        and sophisticated solutions deliver identical growth rates, observationally equivalent to a
-        non-behavioural model with reparametrised utility curvature. This formulation, however, fails
-        to capture that when absolute consumption increases, habits and comparisons become more
-        salient. A minimal CES generalisation with complementarity is able to capture this intuition
-        and breaks the folk theorem, implying inefficiently high growth, overwork, and rising
-        inequality aversion along development.
-        </abstract>
-      -->
+      tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          show(tab.dataset.tab);
+          history.replaceState(null, '', '#' + tab.dataset.tab);
+        });
 
-      <paper><a href="pdfs/2026_06_11_Garibaldi_Turri.pdf" target="_blank">Monopsony in Growth Theory</a>,
-        with Pietro Garibaldi
-      </paper>
-      <p>CEPR DP19652</p>
-      <abstract>The secular decline in the labor share and the long-run reduction in labor supply suggest that
-        imperfect labor markets can play a role in long-run economic growth. Unlike rising markups,
-        rising wage markdowns are compatible with a balanced growth path featuring declining labor
-        share and constant capital-output ratio. We introduce oligopsony and oligopoly power in a
-        neoclassical growth model with superstar firms and an inferior sector which represents workers’
-        outside option. Faster TFP growth in the superstar sector with respect to the inferior sector
-        generates an endogenously increasing markdown, the driver of growth misallocation. The model
-        can be calibrated to simultaneously match the joint trends of GDP growth, declining labor share,
-        and hours worked. For the US, the consumption-equivalent loss with respect to the optimal
-        growth path is around 7.5 percent. An extension of the model with hand-to-mouth workers
-        and capitalists delivers balanced growth with increasing inequality. While—in this context—
-        proportional taxation distorts equilibrium labor supply, a rising minimum wage can restore
-        efficient growth.
-        </abstract>
+        // Left/right arrows move between tabs, as expected of a tab list
+        tab.addEventListener('keydown', e => {
+          const step = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+          if (!step) return;
+          e.preventDefault();
+          const next = tabs[(tabs.indexOf(tab) + step + tabs.length) % tabs.length];
+          show(next.dataset.tab);
+          history.replaceState(null, '', '#' + next.dataset.tab);
+          next.focus();
+        });
+      });
 
+      // Open the section named in the URL, so links like /#teaching work
+      function showFromUrl() {
+        const fromUrl = location.hash.slice(1);
+        show(names.includes(fromUrl) ? fromUrl : names[0]);
+      }
 
-
-      <h3>Research Notes</h3>
-      <paper><a href="pdfs/2026_02_27_Turri.pdf" target="_blank">Log Linearisation as a Coordinate Representation of Taylor Expansion</a></paper>
-      <details class="abstract-collapse">
-        <summary>Abstract</summary>
-      <abstract>Macroeconomists commonly approximate nonlinear models using log linearisation, 
-        whereas mathematics and the physical sciences typically rely on Taylor expansions in levels. 
-        This note shows that the distinction is purely representational: 
-        log linearisation is a particular coordinate representation of a Taylor expansion. 
-        By separating the order of approximation from the choice of deviation metric, 
-        I derive explicit second-order mappings between log and per-unit deviations 
-        and show that, when handled consistently, they yield equivalent local approximations of economic equilibrium conditions.
-        The analysis also clarifies the role of coordinate choice in practice. 
-        Multiplicative relationships become additive in log coordinates, while additive identities remain exact in per-unit form. 
-        As a result, when a model’s equilibrium conditions are predominantly multiplicative, 
-        log deviations provide a particularly convenient representation. 
-        The note therefore offers both a conceptual unification of common approximation practices 
-        and a transparent procedure for deriving second-order approximations.</abstract>
-        </details>
-
-  
-      <h2>Teaching</h2>
-      <p>In the next academic year I will teach the first-year course in Macroeconomics for the PhD in Economics at LSE.  </p>
-      <p>In the academic year 2025/26 I taught International Economics, Geoeconomics and Economic Policy Analysis.</p>
-      <p>I previously taught undergraduate courses in Macroeconomics and Microeconomics and I am an Associate Fellow of Advanced HE.</p>
+      window.addEventListener('hashchange', showFromUrl);
+      showFromUrl();
+    })();
+  </script>
 </body>
 </html>

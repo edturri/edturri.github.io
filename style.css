@@ -1,160 +1,334 @@
-/* Style the entire page */
+/* ----------------------------------------------------------------
+   Stylesheet for index.html (tabbed layout).
+
+   Palette — matched to iditella.github.io (GitHub Pages "minimal" theme).
+   Old warm palette, if you want it back:
+     --bg: #EAE3DA;  --text: #3a3532;  --heading: #A47B67;
+     --link: #A47B67;  --muted: #7d746e;
+   ---------------------------------------------------------------- */
+:root {
+  --bg: #ffffff;
+  --text: #000000;      /* body text */
+  --heading: #222222;   /* near-black headings and paper titles */
+  --link: #267CB9;      /* blue links */
+  --link-hover: #069;
+  --muted: #777777;
+  --rule: #e3e3e3;      /* hairline under the tab bar */
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
-    font-family: 'Montserrat', sans-serif;
-    background-color: #f0efeb; /* Cloud Dancer, Pantone color fof the year 2026 */
-    color: #333;
-    max-width: 1150px;
-    margin: 40px auto;
-    padding: 0 20px;
-    line-height: 1.6;
-    text-align: justify;
-  }
-  
-  /* Main heading (your name) */
-h1 {
-    font-size: 2em;
-    color: #A47B67; /* Mocha Mousse, Pantone color fof the year 2025 */
-    margin-bottom: 80px;
-    margin-top: 120px;  /* move the name down */
-    font-weight: normal;   /* or 400 */
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  background-color: var(--bg);
+  color: var(--text);
+  margin: 0;
+  padding: 0 50px;
+  line-height: 1.6;
 }
 
-  
-  /* Section titles */
-h2 {
-    font-size: 1.5em;
-    color: #A47B67;
-    font-weight: normal;   /* or 400 */
+/* Two columns: fixed-feel sidebar on the left, scrolling content on the right */
+.wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 80px 0 60px;
+  display: flex;
+  gap: 70px;
+  align-items: flex-start;
 }
 
-p {
-    text-align: left;
+/* ------------------------- Sidebar ------------------------- */
+.sidebar {
+  width: 260px;
+  flex-shrink: 0;
+  position: sticky;   /* stays in view while the content scrolls */
+  top: 60px;
 }
 
-  /* Subsection titles */
-h3 {
-    font-size: 1em;
-    color: #A47B67;
-    font-weight: normal;   /* or 400 */
+.sidebar h1 {
+  font-size: 1.6em;
+  font-weight: 600;
+  color: var(--heading);
+  margin: 0 0 25px 0;
+  line-height: 1.3;
 }
 
-p {
-    text-align: left;
+.sidebar picture {
+  display: block;
 }
 
-
-paper {
-    display: block;
-    margin-bottom: 10px; 
-    font-size: 1em;
-    font-weight: normal;   /* or 400 */
-}
-
-abstract {
-    display: block;
-    margin-top: 10px;
-    margin-bottom: 30px;
-    line-height: 1.6;
-    font-size: 0.9em;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-
-  /* Links */
-  a {
-    color: #A47B67;
-    text-decoration: underline;
-  }
-  
-  /*a:hover {
-    text-decoration: underline;
-  }*/
-  
-  /* Unordered list (papers) */
-  ul {
-    list-style-type: square;
-    padding-left: 20px;
-  }
-
-/* Container for photo + text (mobile-first) */
-.intro-block {
-    display: flex;
-    flex-direction: column;   /* stack by default */
-    align-items: flex-start;
-    gap: 20px;
-    margin: 40px 0;
-}
-
-/* Photo styling – full width on mobile */
 .profile-photo {
-    display: block;
-    width: 100%;              /* full width of the content column */
-    max-width: 100%;
-    height: auto;
-    border-radius: 4px;
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
 }
 
-/* Text below the image on mobile */
-.intro-text {
-    width: 100%;
-    font-size: 1.1em;
-    line-height: 1.6;
-    text-align: left;
+.tagline {
+  margin: 18px 0 8px 0;
+  font-size: 1em;
+  color: var(--muted);
+  line-height: 1.5;
 }
 
-@media (min-width: 900px) {
-
-  .intro-block {
-    flex-direction: row;    /* side by side on desktop */
-    align-items: flex-start;
-  }
-
-  .profile-photo {
-    width: 350px;           /* fixed width on desktop */
-    max-width: 350px;
-  }
-
-  .intro-text {
-    flex: 1;                /* text takes remaining space on the right */
-    text-align: justify;
-  }
+.quick-links {
+  margin: 0;
+  font-size: 1em;
 }
 
-@media (max-width: 899px) {
-    p {
-        text-align: left;
-    }
-
-    paper {
-        text-align: left;
-    }
+/* ------------------------- Content ------------------------- */
+.content {
+  flex: 1;
+  min-width: 0;
 }
 
+.content > p:first-child {
+  margin-top: 0;
+}
 
-/* Remove default marker */
+h2 {
+  font-size: 1.5em;
+  font-weight: 600;
+  color: var(--heading);
+  margin-top: 50px;
+}
+
+h3 {
+  font-size: 1.1em;
+  font-weight: 600;
+  color: var(--heading);
+  margin-top: 35px;
+}
+
+a {
+  color: var(--link);
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  color: var(--link-hover);
+}
+
+/* --------------------------- Tabs --------------------------- */
+/* The three section names sit side by side where the old headings were */
+.tabs,
+.tab-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+}
+
+.tabs {
+  margin: 55px 0 0 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+/* The CV is a link out to the PDF, not a section, but it sits in the same row */
+.tabs button,
+.tabs .tab-link {
+  font-family: inherit;
+  font-size: 1.5em;       /* same size as the old section headings */
+  font-weight: 600;
+  color: var(--muted);
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  margin: 0 0 -1px 0;     /* sit the underline on top of the hairline */
+  padding: 0 0 12px 0;
+  cursor: pointer;
+  line-height: 1.3;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.tabs button:hover,
+.tabs .tab-link:hover {
+  color: var(--heading);
+}
+
+.tabs button[aria-selected="true"] {
+  color: var(--heading);
+  border-bottom-color: var(--link);
+}
+
+.tabs button:focus-visible,
+.tabs .tab-link:focus-visible {
+  outline: 2px solid var(--link);
+  outline-offset: 3px;
+}
+
+/* Panel below the tab bar */
+.panel > *:first-child {
+  margin-top: 30px;
+}
+
+.panel > p:last-child,
+.panel > .paper:last-child {
+  margin-bottom: 0;
+}
+
+/* ------------------------- Papers ------------------------- */
+.paper {
+  margin-bottom: 35px;
+}
+
+/* Entries with no abstract (work in progress) sit closer together */
+.paper.brief {
+  margin-bottom: 18px;
+}
+
+.paper-title {
+  font-weight: 600;
+  color: var(--heading);
+  margin: 0 0 4px 0;
+}
+
+.coauthors {
+  font-style: italic;
+  margin: 0 0 4px 0;
+}
+
+.venue {
+  font-size: 0.95em;
+  color: var(--muted);
+  margin: 0 0 10px 0;
+}
+
+/* Figure (e.g. the Solvay photo above the dataset) */
+.data-figure {
+  margin: 0 0 30px 0;
+}
+
+.data-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.data-figure figcaption {
+  font-size: 0.85em;
+  color: var(--muted);
+  margin-top: 8px;
+}
+
+/* Extra links for a paper (replication package, published version, ...) */
+.paper-links {
+  font-size: 0.95em;
+  margin: 0 0 10px 0;
+}
+
+.abstract {
+  font-size: 0.95em;
+  margin: 10px 0 0 0;
+  text-align: justify;
+}
+
+/* ------------------------ Teaching ------------------------ */
+.institution {
+  font-style: italic;
+  color: var(--heading);
+  margin: 24px 0 12px 0;
+}
+
+.course {
+  margin-bottom: 14px;
+}
+
+.course-title {
+  font-weight: 600;
+  color: var(--heading);
+  margin: 0 0 2px 0;
+}
+
+.course-meta {
+  font-size: 0.95em;
+  color: var(--muted);
+  margin: 0;
+}
+
+.teaching-note {
+  margin-top: 30px;
+}
+
+/* Collapsible abstract */
 .abstract-collapse summary {
   list-style: none;
   cursor: pointer;
+  font-size: 0.95em;
+  color: var(--muted);
 }
 
 .abstract-collapse summary::-webkit-details-marker {
   display: none;
 }
 
-/* Create custom triangle */
 .abstract-collapse summary::before {
   content: "+";
-  color: #A47B67;        /* your chosen color */
+  color: var(--link);
   display: inline-block;
   margin-right: 6px;
   transition: transform 0.2s ease;
 }
 
-/* Rotate when open */
 .abstract-collapse[open] summary::before {
   transform: rotate(90deg);
+}
+
+/* ------------------------- Mobile ------------------------- */
+@media (max-width: 899px) {
+  body {
+    font-size: 15px;   /* a little larger for reading at arm's length */
+    padding: 0 20px;
+  }
+
+  .wrapper {
+    flex-direction: column;   /* sidebar stacks on top */
+    gap: 24px;
+    padding: 30px 0;
+  }
+
+  .sidebar {
+    position: static;
+    width: 100%;
+  }
+
+  /* Landscape crop here, so it can be wider and still stay short */
+  .profile-photo {
+    max-width: 320px;
+  }
+
+  /* Roomier tap targets for fingers */
+  .quick-links a {
+    display: inline-block;
+    padding: 8px 0;
+  }
+
+  .abstract-collapse summary {
+    display: block;
+    padding: 8px 0;
+  }
+
+  .tabs,
+  .tab-group {
+    gap: 24px;
+  }
+
+  .tabs {
+    margin-top: 30px;
+  }
+
+  .tabs button,
+  .tabs .tab-link {
+    font-size: 1.3em;
+    padding: 6px 0 14px;
+  }
+
+  .abstract {
+    text-align: left;
+  }
 }
